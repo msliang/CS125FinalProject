@@ -29,23 +29,13 @@
 
 
     <Button
-        android:id="@+id/snooze"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="54dp"
-        android:layout_marginTop="549dp"
-        android:text="Snooze" />
-
-    <Button
         android:id="@+id/stop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="259dp"
-        android:layout_marginTop="545dp"
+        android:layout_marginStart="163dp"
+        android:layout_marginTop="562dp"
         android:text="Stop" />
 
     <Button
@@ -54,8 +44,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="157dp"
-        android:layout_marginTop="497dp"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="495dp"
         android:text="Set Alarm" />
 
     <TextView
@@ -64,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="178dp"
-        android:layout_marginTop="41dp"
+        android:layout_marginStart="162dp"
+        android:layout_marginTop="42dp"
         android:text="No Alarm Set" />
 </RelativeLayout>
