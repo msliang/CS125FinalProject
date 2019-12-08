@@ -56,7 +56,9 @@ public class MainActivity extends AppCompatActivity {
                 //delays the intent for AlarmReceiver
                 pendingIntent = PendingIntent.getBroadcast(MainActivity.this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
                 // delays until alarm time
-                alarm_Manager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+                alarm_Manager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis() - 3000, pendingIntent);
+                set.setVisibility(View.GONE);
+                stop.setVisibility(View.VISIBLE);
             }
         });
         stop.setOnClickListener(new View.OnClickListener() {
