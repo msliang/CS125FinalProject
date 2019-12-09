@@ -50,11 +50,13 @@
 
     <TextView
         android:id="@+id/status"
-        android:layout_width="wrap_content"
+        android:layout_width="351dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="162dp"
-        android:layout_marginTop="42dp"
-        android:text="No Alarm Set" />
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="36dp"
+        android:text="No Alarm Set"
+        android:textAlignment="center"
+        android:textSize="30sp" />
 </RelativeLayout>

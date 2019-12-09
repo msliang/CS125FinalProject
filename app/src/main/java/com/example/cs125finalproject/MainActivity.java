@@ -37,10 +37,6 @@ public class MainActivity extends AppCompatActivity {
         final Button stop = findViewById(R.id.stop);
         //not visible until alarm is started
         stop.setVisibility(View.GONE);
-        //snooze button
-        final Button snooze = findViewById(R.id.snooze);
-        //not visible until alarm is started
-        snooze.setVisibility(View.GONE);
         //set alarm button
         final Button set = findViewById(R.id.set);
         //visible at first gone after alarm is started
@@ -49,14 +45,16 @@ public class MainActivity extends AppCompatActivity {
         set.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
+                final Intent intent = new Intent(context, AlarmReceiver.class);
                 calendar.set(Calendar.HOUR_OF_DAY, alarm.getCurrentHour());
                 calendar.set(Calendar.MINUTE, alarm.getCurrentMinute());
                 //returns alarm as a string
                 status.setText("Alarm Set For " + AlarmToTime());
+                intent.putExtra("extra", "on");
                 //delays the intent for AlarmReceiver
                 pendingIntent = PendingIntent.getBroadcast(MainActivity.this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
                 // delays until alarm time
-                alarm_Manager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+                alarm_Manager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis() , pendingIntent);
                 set.setVisibility(View.GONE);
                 stop.setVisibility(View.VISIBLE);
             }
@@ -68,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
                 alarm_Manager.cancel(pendingIntent);
                 intent.putExtra("extra", "off");
                 sendBroadcast(intent);
+                stop.setVisibility(View.GONE);
+                set.setVisibility(View.VISIBLE);
             }
 
         });
