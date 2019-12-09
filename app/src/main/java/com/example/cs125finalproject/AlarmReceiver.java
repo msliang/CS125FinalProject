@@ -14,6 +14,7 @@ public class AlarmReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         //i = intent;
         media = MediaPlayer.create(context, R.raw.alarm);
+
         Log.e("In Receiver", "here");
         String onOff = intent.getStringExtra("extra");
         if (onOff.equals("on")) {
