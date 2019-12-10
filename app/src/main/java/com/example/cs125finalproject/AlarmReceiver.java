@@ -37,6 +37,7 @@ public class AlarmReceiver extends BroadcastReceiver {
     public void stop() {
         media.stop();
         //media.release()
+        //media.pleasework()
         Log.e("stop method", "here");
     }
 }
